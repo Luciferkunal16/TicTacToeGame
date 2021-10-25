@@ -5,8 +5,10 @@ import java.util.Scanner;
 
 public class TicTacToe1 {
 	
+	char[] boardOfChar = new char[10];
+	
 	void  boardOfCharacter() {
-		char[] boardOfChar = new char[10];
+		
 		boardOfChar[1] = ' ';
 		boardOfChar[2] = ' ';
 		boardOfChar[3] = ' ';
@@ -33,10 +35,32 @@ public class TicTacToe1 {
 			 systemChar='O';
 		 }
 	}
+	 public void printBoard() {
+		 
+		 
+		         for (int i = 0; i < 3; i++) {
+		 
+		             System.out.print("| ");
+		 
+		             for (int j = 0; j < 3; j++) {
+		            	 System.out.print(boardOfChar[i]);
+		 
+		                 System.out.print( " | ");
+		 
+		             }
+		 
+		             System.out.println();
+		
+		            ;
+		
+		         }
+		 
+		     }
+
 	public static void main(String[] args) {
 	    TicTacToe1 rv=new TicTacToe1();
 	    rv.boardOfCharacter();
-	  
+	  rv.printBoard();
 		
 	}
 }
