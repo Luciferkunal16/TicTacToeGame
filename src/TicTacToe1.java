@@ -38,29 +38,17 @@ public class TicTacToe1 {
 	 public void printBoard() {
 		 
 		 
-		         for (int i = 1; i < 4; i++) {
-		 
-		             System.out.print("| ");
-		             System.out.print(boardOfChar[i]);
-		             
-		 
-		             for (int j = 1; j < 4; j++) {
-		            	
-		 
-		                 System.out.print( " | ");
-		 
-		             }
-		 
-		             System.out.println();
-		
-		            ;
-		
-		         }
+		   System.out.println("|"+boardOfChar[1]+"|"+boardOfChar[2]+"|"+boardOfChar[3]+"|");
+		   System.out.println("|"+boardOfChar[4]+"|"+boardOfChar[5]+"|"+boardOfChar[6]+"|");
+		   System.out.println("|"+boardOfChar[7]+"|"+boardOfChar[8]+"|"+boardOfChar[9]+"|");
+		   
+		   
+		   
 		 
 		     }
 	 public void moveOfPlayer() {
 		 Scanner inp=new Scanner(System.in);
-		 System.out.println("Enter ther desired position in Game (1-9 ");
+		 System.out.println("Enter ther desired position in Game (1-9) ");
 		 int choice=inp.nextInt();
 		switch (choice){
 		case 1:
