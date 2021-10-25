@@ -8,17 +8,12 @@ public class TicTacToe1 {
 	char[] boardOfChar = new char[10];
 	char playerChar;
 	char systemChar;
+	static int Turn;
 	void  boardOfCharacter() {
+		for(int i=1;i<=9;i++) {
+		boardOfChar[i] = ' ';
 		
-		boardOfChar[1] = ' ';
-		boardOfChar[2] = ' ';
-		boardOfChar[3] = ' ';
-		boardOfChar[4] = ' ';
-		boardOfChar[5] = ' ';
-		boardOfChar[6] = ' ';
-		boardOfChar[7] = ' ';
-		boardOfChar[8] = ' ';
-		boardOfChar[9] = ' ';
+		}
 	}
 	void playerInput_UC1_(){
 		Scanner inp=new Scanner(System.in);
@@ -38,6 +33,7 @@ public class TicTacToe1 {
 		 else {
 			 System.out.println("Wrong Choice ");
 		 }
+		
 	}
 	 public void printBoard() {
 		 
@@ -98,6 +94,7 @@ public class TicTacToe1 {
 				{
 					boardOfChar[3]='x';
 				}
+			toss();
 				break;
 		case 4:
 			if ( playerChar=='O' && boardOfChar[4]==' ')
@@ -161,13 +158,29 @@ public class TicTacToe1 {
 			break;
 			default:
 				System.out.println("Wrong Choice");
-				moveOfPlayer();
+				
 		}
+	 }
+	  static void  toss() {
+		  int choice;
+		  
+		  choice=(int)Math.random()*10%2;
+		  if(choice==1) {
+			  System.out.println("Player turn");
+			  Turn=1;
+		  }
+		  else {
+			  System.out.println("Computer turn");
+			  Turn=2;
+		  }
+		 
 	 }
 
 	public static void main(String[] args) {
 	    TicTacToe1 rv=new TicTacToe1();
+	   
 	    rv.boardOfCharacter();
+	    toss();
 	    rv.playerInput_UC1_();
 	    rv.moveOfPlayer();
 	    rv.printBoard();
