@@ -42,12 +42,14 @@ public class TicTacToe1 {
 	 public void printBoard() {
 		 
 		 
-		         for (int i = 0; i < 3; i++) {
+		         for (int i = 1; i < 4; i++) {
 		 
 		             System.out.print("| ");
+		             System.out.print(boardOfChar[i]);
+		             
 		 
-		             for (int j = 0; j < 3; j++) {
-		            	 System.out.print(boardOfChar[i]);
+		             for (int j = 1; j < 4; j++) {
+		            	
 		 
 		                 System.out.print( " | ");
 		 
@@ -66,93 +68,93 @@ public class TicTacToe1 {
 		 int choice=inp.nextInt();
 		switch (choice){
 		case 1:
-			if (choice==1 && playerChar=='O' )
+			if (playerChar=='O' )
 		{
 			boardOfChar[1]='O';
 		}
-			else if(choice == 2 && playerChar=='X')
+			else if( playerChar=='X')
 			{
 				boardOfChar[1]='x';
 			}
 			break;
 			
 		case 2:
-			if (choice==2 && playerChar=='O' )
+			if (playerChar=='O' )
 				{
 				boardOfChar[2]='O';
 				}
-				else if(choice == 2 && playerChar=='X')
+				else if( playerChar=='X')
 				{
 					boardOfChar[2]='x';
 				}
 				break;
 				
 		case 3:
-			if (choice==3 && playerChar=='O' )
+			if ( playerChar=='O' )
 				{
 				boardOfChar[3]='O';
 				}
-				else if(choice == 3 && playerChar=='X')
+				else if( playerChar=='X')
 				{
 					boardOfChar[3]='x';
 				}
 				break;
 		case 4:
-			if (choice==4 && playerChar=='O' )
+			if ( playerChar=='O' )
 				{
 				boardOfChar[4]='O';
 				}
-			else if(choice == 2 && playerChar=='X')
+			else if( playerChar=='X')
 				{
 					boardOfChar[4]='x';
 				}
 			break;
 		case 5:
-			if (choice==2 && playerChar=='O' )
+			if ( playerChar=='O' )
 				{
 				boardOfChar[5]='O';
 				}
-			else if(choice == 2 && playerChar=='X')
+			else if( playerChar=='X')
 				{
 					boardOfChar[5]='x';
 				}
 			break;
 		case 6:
-			if (choice==2 && playerChar=='O' )
+			if ( playerChar=='O' )
 				{
 				boardOfChar[6]='O';
 				}
-			else if(choice == 2 && playerChar=='X')
+			else if( playerChar=='X')
 				{
 					boardOfChar[6]='x';
 				}
 			break;
 		case 7:
-			if (choice==2 && playerChar=='O' )
+			if (playerChar=='O' )
 			 	{
 				boardOfChar[7]='O';
 			 	}
-			else if(choice == 2 && playerChar=='X')
+			else if(playerChar=='X')
 				{
 					boardOfChar[7]='x';
 				}
 			break;
 		case 8:
-			if (choice==2 && playerChar=='O' )
+			if (playerChar=='O' )
 				{
 				boardOfChar[8]='O';
 				}
-			else if(choice == 2 && playerChar=='X')
+			else if( playerChar=='X')
 			{
 					boardOfChar[8]='x';
 			}
 			break;
 		case 9:
-			if (choice==2 && playerChar=='O' )
+			if ( playerChar=='O' )
 				{
 				boardOfChar[9]='O';
 				}
-			else if(choice == 2 && playerChar=='X')
+			else if( playerChar=='X')
 				{
 					boardOfChar[9]='x';
 				}
@@ -167,7 +169,7 @@ public class TicTacToe1 {
 	    rv.boardOfCharacter();
 	    rv.playerInput_UC1_();
 	    rv.moveOfPlayer();
-	  rv.printBoard();
+	    rv.printBoard();
 		
 	}
 }
