@@ -68,99 +68,100 @@ public class TicTacToe1 {
 		 int choice=inp.nextInt();
 		switch (choice){
 		case 1:
-			if (playerChar=='O' )
+			if (playerChar=='O' && boardOfChar[1]==' ')
 		{
 			boardOfChar[1]='O';
 		}
-			else if( playerChar=='X')
+			else if( playerChar=='X' && boardOfChar[1]==' ')
 			{
 				boardOfChar[1]='x';
 			}
 			break;
 			
 		case 2:
-			if (playerChar=='O' )
+			if (playerChar=='O'&& boardOfChar[2]==' ' )
 				{
 				boardOfChar[2]='O';
 				}
-				else if( playerChar=='X')
+				else if( playerChar=='X' &&  boardOfChar[2]==' ')
 				{
 					boardOfChar[2]='x';
 				}
 				break;
 				
 		case 3:
-			if ( playerChar=='O' )
+			if ( playerChar=='O' && boardOfChar[3]==' ')
 				{
 				boardOfChar[3]='O';
 				}
-				else if( playerChar=='X')
+				else if( playerChar=='X' && boardOfChar[3]==' ')
 				{
 					boardOfChar[3]='x';
 				}
 				break;
 		case 4:
-			if ( playerChar=='O' )
+			if ( playerChar=='O' && boardOfChar[4]==' ')
 				{
 				boardOfChar[4]='O';
 				}
-			else if( playerChar=='X')
+			else if( playerChar=='X' && boardOfChar[4]==' ')
 				{
-					boardOfChar[4]='x';
+					boardOfChar[4]='x' ;
 				}
 			break;
 		case 5:
-			if ( playerChar=='O' )
+			if ( playerChar=='O' && boardOfChar[5]==' ' )
 				{
 				boardOfChar[5]='O';
 				}
-			else if( playerChar=='X')
+			else if( playerChar=='X' && boardOfChar[5]==' ')
 				{
 					boardOfChar[5]='x';
 				}
 			break;
 		case 6:
-			if ( playerChar=='O' )
+			if ( playerChar=='O'  && boardOfChar[6]==' ')
 				{
 				boardOfChar[6]='O';
 				}
-			else if( playerChar=='X')
+			else if( playerChar=='X' && boardOfChar[6]==' ')
 				{
 					boardOfChar[6]='x';
 				}
 			break;
 		case 7:
-			if (playerChar=='O' )
+			if (playerChar=='O' && boardOfChar[7]==' ' )
 			 	{
 				boardOfChar[7]='O';
 			 	}
-			else if(playerChar=='X')
+			else if(playerChar=='X' && boardOfChar[7]==' ')
 				{
 					boardOfChar[7]='x';
 				}
 			break;
 		case 8:
-			if (playerChar=='O' )
+			if (playerChar=='O'  && boardOfChar[8]==' ')
 				{
 				boardOfChar[8]='O';
 				}
-			else if( playerChar=='X')
+			else if( playerChar=='X' && boardOfChar[8]==' ')
 			{
 					boardOfChar[8]='x';
 			}
 			break;
 		case 9:
-			if ( playerChar=='O' )
+			if ( playerChar=='O' && boardOfChar[9]==' ')
 				{
 				boardOfChar[9]='O';
 				}
-			else if( playerChar=='X')
+			else if( playerChar=='X' && boardOfChar[9]==' ')
 				{
 					boardOfChar[9]='x';
 				}
 			break;
 			default:
 				System.out.println("Wrong Choice");
+				moveOfPlayer();
 		}
 	 }
 
