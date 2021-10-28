@@ -21,7 +21,7 @@ public class TicTacToe1 {
 
 	public static void getPlayerChoice() {
 
-		System.out.print("select X or O : ");
+		System.out.print("Choose X or O : ");
 		player = Character.toUpperCase(scannerObject.next().charAt(0));
 
 		if (player == 'X')
@@ -56,7 +56,7 @@ public class TicTacToe1 {
 				showBoard();
 				break;
 			} else {
-				System.out.println("Invalid Choice");
+				System.out.println("Invalid Choice. Please Enter position again.");
 
 			}
 		}
@@ -65,15 +65,50 @@ public class TicTacToe1 {
 	public static void computerMove() {
 		System.out.println("\nComputer Is Playing");
 		do {
-			playLocation = randomGenerator.nextInt(9) + 1;
-			if(predictWinLocation()) {
+			occupyCorner();
+			if (occupyCenter()) {
+			}
+			if (occupyOther()) {
+			}
+			if (predictWinLocationAndBlock()) {
 			}
 		} while (!isEmpty(playLocation));
+
 		board[playLocation] = computer;
 		showBoard();
 	}
 	
-	public static boolean predictWinLocation() {
+	public static void occupyCorner() {
+
+		int[] corners = { 1, 3, 7, 9 };
+		int corner = randomGenerator.nextInt(3);
+		playLocation = corners[corner];
+	}
+
+	
+	public static boolean occupyCenter() {
+		if (board[1] != ' ' && board[3] != ' ' && board[7] != ' ' && board[9] != ' ') {
+			if (isEmpty(5)) {
+				playLocation = 5;
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public static boolean occupyOther() {
+		if (board[1] != ' ' && board[3] != ' ' && board[7] != ' ' && board[9] != ' ' && board[5] != ' ') {
+			int[] notCorners = { 2, 4, 6, 8 };
+			int notCorner = randomGenerator.nextInt(3);
+			if (isEmpty(notCorners[notCorner])) {
+				playLocation = notCorners[notCorner];
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public static boolean predictWinLocationAndBlock() {
 		if (board[1] == computer && board[2] == computer && board[3] == ' ') {
 			playLocation = 3;
 			return true;
@@ -169,10 +204,105 @@ public class TicTacToe1 {
 		if (board[7] == computer && board[5] == computer && board[3] == ' ') {
 			playLocation = 3;
 			return true;
+		}
+		if (board[1] == player && board[2] == player && board[3] == ' ') {
+			playLocation = 3;
+			return true;
+		}
+		if (board[1] == player && board[3] == player && board[2] == ' ') {
+			playLocation = 2;
+			return true;
+		}
+		if (board[3] == player && board[2] == player && board[1] == ' ') {
+			playLocation = 1;
+			return true;
+		}
+		if (board[4] == player && board[5] == player && board[6] == ' ') {
+			playLocation = 6;
+			return true;
+		}
+		if (board[4] == player && board[6] == player && board[5] == ' ') {
+			playLocation = 5;
+			return true;
+		}
+		if (board[6] == player && board[5] == player && board[4] == ' ') {
+			playLocation = 4;
+			return true;
+		}
+		if (board[7] == player && board[8] == player && board[9] == ' ') {
+			playLocation = 9;
+			return true;
+		}
+		if (board[7] == player && board[9] == player && board[8] == ' ') {
+			playLocation = 8;
+			return true;
+		}
+		if (board[9] == player && board[8] == player && board[7] == ' ') {
+			playLocation = 7;
+			return true;
+		}
+		if (board[1] == player && board[4] == player && board[7] == ' ') {
+			playLocation = 7;
+			return true;
+		}
+		if (board[1] == player && board[7] == player && board[4] == ' ') {
+			playLocation = 4;
+			return true;
+		}
+		if (board[7] == player && board[4] == player && board[1] == ' ') {
+			playLocation = 1;
+			return true;
+		}
+		if (board[2] == player && board[5] == player && board[8] == ' ') {
+			playLocation = 8;
+			return true;
+		}
+		if (board[2] == player && board[8] == player && board[5] == ' ') {
+			playLocation = 5;
+			return true;
+		}
+		if (board[8] == player && board[5] == player && board[2] == ' ') {
+			playLocation = 2;
+			return true;
+		}
+		if (board[3] == player && board[6] == player && board[9] == ' ') {
+			playLocation = 9;
+			return true;
+		}
+		if (board[3] == player && board[9] == player && board[6] == ' ') {
+			playLocation = 6;
+			return true;
+		}
+		if (board[9] == player && board[6] == player && board[3] == ' ') {
+			playLocation = 3;
+			return true;
+		}
+		if (board[1] == player && board[5] == player && board[9] == ' ') {
+			playLocation = 9;
+			return true;
+		}
+		if (board[1] == player && board[9] == player && board[5] == ' ') {
+			playLocation = 5;
+			return true;
+		}
+		if (board[9] == player && board[5] == player && board[1] == ' ') {
+			playLocation = 1;
+			return true;
+		}
+		if (board[3] == player && board[5] == player && board[7] == ' ') {
+			playLocation = 7;
+			return true;
+		}
+		if (board[3] == player && board[7] == player && board[5] == ' ') {
+			playLocation = 5;
+			return true;
+		}
+		if (board[7] == player && board[5] == player && board[3] == ' ') {
+			playLocation = 3;
+			return true;
 		} else
 			return false;
 	}
-
 	public static boolean isEmpty(int location) {
 		return board[location] == ' ';
 
