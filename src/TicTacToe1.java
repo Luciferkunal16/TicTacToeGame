@@ -11,7 +11,7 @@ public class TicTacToe1 {
 	private static int playLocation;
 	private static boolean playerWinToss;
 	static boolean isWinner;
-	
+/*...Create Board..*/
 	public static void createBoard() {
 		for (int index = 1; index < 10; index++) {
 			board[index] = ' ';
@@ -19,7 +19,7 @@ public class TicTacToe1 {
 		isWinner = false;
 		
 	}
-
+/*Getting Player Choice*/
 	public static void getPlayerChoice() {
 
 		System.out.print("Choose X or O : ");
@@ -32,7 +32,7 @@ public class TicTacToe1 {
 		System.out.println("You have selected : " + player);
 		System.out.println("Computer's choice is : " + computer);
 	}
-
+/* Displaying Current Board */
 	public static void showBoard() {
 		System.out.println();
 		System.out.println("  " + board[1] + "  |  " + board[2] + "   | " + board[3] + "  ");
@@ -41,7 +41,7 @@ public class TicTacToe1 {
 		System.out.println("------------------");
 		System.out.println("  " + board[7] + "  |  " + board[8] + "   | " + board[9] + "  ");
 	}
-
+/* Assigning user move */
 	public static void userMove() {
 		
 		System.out.println("\nPlayer Is Playing");
@@ -62,7 +62,7 @@ public class TicTacToe1 {
 			}
 		}
 	}
-
+/*For Computer Move  */
 	public static void computerMove() {
 		System.out.println("\nComputer Is Playing");
 		do {
@@ -108,7 +108,7 @@ public class TicTacToe1 {
 		}
 		return false;
 	}
-	
+	/* Blocking Method*/
 	public static boolean predictWinLocationAndBlock() {
 		if (board[1] == computer && board[2] == computer && board[3] == ' ') {
 			playLocation = 3;
@@ -308,7 +308,7 @@ public class TicTacToe1 {
 		return board[location] == ' ';
 
 	}
-
+/*Toss MethoD*/
 	public static void checkToss() {
 
 		double tossResult = Math.floor(Math.random() * 10) % 2;
@@ -331,7 +331,7 @@ public class TicTacToe1 {
 		}
 		return false;
 	}
-
+//Winning Condition
 	public static boolean checkWinner() {
 		if (isWinner)
 			return true;
@@ -363,7 +363,7 @@ public class TicTacToe1 {
 
 		return false;
 	}
-
+/* Main Game */
 	public static void startGame() {
 		do {
 			if (playerWinToss) {
@@ -384,7 +384,7 @@ public class TicTacToe1 {
 	
 	public static void main(String[] args) {
 
-		System.out.println("----- Welcome To The Game Of Tic Tac Toe -----\n");
+		System.out.println(" Welcome To The Game Of Tic Tac Toe ");
 		boolean playMore = true;
 		while(playMore){
 			createBoard();
